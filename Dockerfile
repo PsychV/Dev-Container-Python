@@ -7,4 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "./usr/src/app/hello.py" ]
+CMD [ "python", "-m", "debugpy", "--wait-for-client", "--listen", "0.0.0.0:5678", "./app/hello.py" ]
+
+
